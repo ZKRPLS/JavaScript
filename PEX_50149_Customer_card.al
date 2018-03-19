@@ -14,4 +14,17 @@ pageextension 50149 "JSD Customer Card" extends "Customer Card"
             }
         }
     }
+    local procedure ShowPresents();
+    var
+        PresentCount: Integer;
+    begin
+        CalcFields("Sales (LCY)");
+        PresentCount := "Sales (LCY)" div 10000;
+        CurrPage.JSAddInDemo.SetPresents(PresentCount);
+    end;
+
+    trigger OnAfterGetCurrRecord();
+    begin
+        ShowPresents();
+    end;
 }

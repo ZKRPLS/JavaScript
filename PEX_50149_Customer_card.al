@@ -12,6 +12,10 @@ pageextension 50149 "JSD Customer Card" extends "Customer Card"
                     Message('I am from NAV');
                 end;
             }
+            field("Sales (LCY)";"Sales (LCY)")
+            {
+                ApplicationArea = All;
+            }            
         }
     }
     local procedure ShowPresents();
